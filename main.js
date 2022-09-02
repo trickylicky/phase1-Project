@@ -2,8 +2,15 @@ let card = document.createElement("li");
 card.className = "card"
 document.querySelector("#results").appendChild(card)
 
-var map = L.map('map').setView([51.5, -0.1], 12);
-L.tileLayer('https://maptiles.p.rapidapi.com/en/map/v1/{z}/{x}/{y}.png?rapidapi-key=YOUR-RAPIDAPI-KEY', {
-attribution: 'Tiles &copy: <a href="https://www.maptilesapi.com/">MapTiles API</a>, Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-maxZoom: 19
-}).addTo(map);
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '9aa649390bmsh438d62d7b07cf67p1ebf76jsn1cae3bd5b0a7',
+		'X-RapidAPI-Host': 'global-zip-codes-with-lat-and-lng.p.rapidapi.com'
+	}
+};
+
+fetch('https://global-zip-codes-with-lat-and-lng.p.rapidapi.com/api/v1/geocode/distance?lat1=13.07&lng1=80.2048&lat2=12.07&lng2=78.2048', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));

@@ -10,10 +10,6 @@ form{
   text-align: center;
 }
 #map{
-  height: 360px;
   margin: 3pc;
-  
-}
-iframe{
-  border: radius 25px;
+  border: radius 5px;pc;
 }
