@@ -2,15 +2,8 @@ let card = document.createElement("li");
 card.className = "card"
 document.querySelector("#results").appendChild(card)
 
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '9aa649390bmsh438d62d7b07cf67p1ebf76jsn1cae3bd5b0a7',
-		'X-RapidAPI-Host': 'maptiles.p.rapidapi.com'
-	}
-};
-
-fetch('https://maptiles.p.rapidapi.com/es/map/v1/3/4/2.png', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+var map = L.map('map').setView([51.5, -0.1], 12);
+L.tileLayer('https://maptiles.p.rapidapi.com/en/map/v1/{z}/{x}/{y}.png?rapidapi-key=YOUR-RAPIDAPI-KEY', {
+attribution: 'Tiles &copy: <a href="https://www.maptilesapi.com/">MapTiles API</a>, Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+maxZoom: 19
+}).addTo(map);
