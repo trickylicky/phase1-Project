@@ -3,3 +3,13 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
   }
+#contents{
+  text-align: center;
+}
+form{
+  text-align: center;
+}
+#map{
+  margin: 3pc;
+  border: radius 5px;
+}
