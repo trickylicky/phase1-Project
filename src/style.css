@@ -1,15 +1,50 @@
-body {
-    background-image: linear-gradient(red, yellow);
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-#contents{
+#contents, td, th{
   text-align: center;
+}
+body{
+  text-align: center;
+  background-image: linear-gradient(red, yellow);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0.1pc;
 }
 form{
-  text-align: center;
+  background-color: aliceblue;
+  margin: 5pc;
+  border-radius: 15pc;
+  border-style: double;
 }
 #map{
-  margin: 3pc;
-  border: radius 5px;pc;
+  border: radius 5px;
+}
+table {
+  margin: 1pc;
+  font-family: arial, sans-serif;
+  width: 70pc;
+}
+th{
+  text-decoration: underline blue;
+}
+.cards{
+  width: 20pc;
+  /* margin: 5pc; */
+}
+.twinkle{
+  animation: animate 1.5s linear infinite;
+}
+@keyframes animate{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0.7;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+.about{
+  margin: 1.5pc;
 }
