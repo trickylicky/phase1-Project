@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Document</title>
+    <title>land calculator</title>
 </head>
 <body>
-<section id="main"style="background-color: black;">
+<section id="main" style="background-color: black;">
     <nav class="navbar navbar-expand-lg navbar-light bg-light" >
         <div class="container-fluid">
             <nav class="navbar">
@@ -29,9 +29,6 @@
                 <a class="nav-link" href=".about">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#content">calculate</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="#convert">conversion</a>
               </li>
             </ul>
@@ -42,7 +39,7 @@
             <!-- How to use this application (About Section) -->
             <div class="card about">
                 <h5>What is Land Area Calculator</h5>
-              <p>A Land area calculator is a useful tool which helps you convert one unit into another easily.<br>A number of different measurements are used for lands. If you want to find the equivalent unit of the local term for the unit, <br> the easiest way would be to do it through a land calculator</p>
+              <p>A Land area calculator is a useful tool that you easily convert one unit into another.<br>Several different measurements are used for lands. If you want to find the equivalent unit of the local term for the unit, <br> the easiest way would be to do it through a land calculator</p>
             </div>
 
         <!-- all inputs shown here -->
@@ -50,63 +47,58 @@
     <form action="#" id="area">
       <h5>Manualy add points here </h5>
         <div id="first-point">
-          <h6>1st POINT</h6>
+          <h6>start POINT</h6>
         <label for="longitude">LONGITUDE : </label>
-        <input type="text" name="longitude" id="longitude">
+        <input type="text" name="longitude" id="longitudeA">
         <label for="latitude">LATITUDE : </label>
-        <input type="text" name="latitude" id="latitude">
-        <input type="submit" id="add" style="margin: 20px;">
+        <input type="text" name="latitudeA" id="latitudeA">
       </div>
       <div id="second-point">
           <h6>2nd POINT</h6>
         <label for="longitude">LONGITUDE : </label>
-        <input type="text" name="longitude" id="longitude">
+        <input type="text" name="longitude" id="longitudeB">
         <label for="latitude">LATITUDE : </label>
-        <input type="text" name="latitude" id="latitude">
-        <input type="submit" id="add" style="margin: 20px;">
+        <input type="text" name="latitude" id="latitudeB">
+        <input type="submit" id="addA" style="margin: 20px;" value="distanceA">
       </div>
       <div id="third-point">
           <h6>3rd POINT</h6>
         <label for="longitude">LONGITUDE : </label>
-        <input type="text" name="longitude" id="longitude">
+        <input type="text" name="longitude" id="longitudeC">
         <label for="latitude">LATITUDE : </label>
-        <input type="text" name="latitude" id="latitude">
-        <input type="submit" id="add" style="margin: 20px;">
+        <input type="text" name="latitude" id="latitudeC">
+        <input type="submit" id="addC" style="margin: 20px;">
       </div>
       <div id="forth-point">
           <h6>4st POINT</h6>
         <label for="longitude">LONGITUDE : </label>
-        <input type="text" name="longitude" id="longitude">
+        <input type="text" name="longitude" id="longitudeD">
         <label for="latitude">LATITUDE : </label>
-        <input type="text" name="latitude" id="latitude">
-        <input type="submit" id="add" style="margin: 20px;">
+        <input type="text" name="latitude" id="latitudeD">
+        <input type="submit" id="addD" style="margin: 20px;">
       </div>
     </form>
         <!-- OUTPUT SHOWN HERE -->
     <div class="container card">
       <table>
         <tr>
-          <th>ID</th>
-          <th>a in metres</th>
-          <th>b in metres</th>
-          <th>c in metres</th>
-          <th>d in metres</th>
+          <th>"a" in metres</th>
+          <th>"b" in metres</th>
+          <th>"c" in metres</th>
+          <th>"d" in metres</th>
           <th class="twinkle">AREA IN SQUARE METRES</th>
-          <th></th>
         </tr>
         <tr>
-          <td>1</td>
           <td>12metres</td>
           <td>12metres</td>
           <td>12metres</td>
           <td>12metres</td>
-          <td>metres SQUARE</td>
-        </tr>
+          <td>metre SQUARE</td>
+          <td><button>delete</button></td>
       </table>
       <div class="card cards">
       <h6 class="twinkle" >AREA CONVERSION</h6>
-      <label for="cars">Choose to convert:</label>
-
+      <label for="conversion">Choose to convert:</label>
       <select name="conversion" id="convert">
         <option value="acres">acres</option>
         <option value="hectares">hectares</option>
@@ -114,6 +106,9 @@
         <option value="ares">ares</option>
       </select>
     </div>
+    </div>
+    <div id="demo">
+      
     </div>
 
           <!-- area conversion -->
