@@ -32,7 +32,12 @@ th{
 }
 .cards{
   width: 20pc;
+  margin-left: 7pc;
   /* margin: 5pc; */
+}
+.learn{
+  width: 65pc;
+  margin: 5pc;
 }
 .twinkle{
   animation: animate 1.5s linear infinite;
