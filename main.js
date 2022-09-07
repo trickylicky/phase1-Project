@@ -44,10 +44,18 @@ function start(event){
             const data4 = await responce4.json()
             const distance4 = await data4.distance
 
+            // add to data table
+            const createNewRow = document.createElement("tr")
+            const createNewColumn =createNewRow.append( document.createElement("td"))
+            const tableDisplay = createNewColumn.append(document.getElementById("tableDisplay"))
+            
+            tableDisplay.innerHTML = `${createNewColumn.innerHTML= distance1}`
           //FIND PERIMETER
           const addTotal = (distance1 + distance2 + distance3 + distance4)/1000
 
           document.getElementById("perimeter").innerHTML = `${addTotal} kilometres`
+
+
         }
         getData()
     })
