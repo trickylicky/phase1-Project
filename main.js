@@ -66,15 +66,24 @@ function start(event){
           <td id="perimeter">${toKilometre(addTotal)} kilometres</td>`
 
           //getting area of the area 
-        //   const roundOffToHundreths =(distance)=> Math.trunc(distance / 100) * 100
-        //     if (roundOffToHundreths(distance1) ===roundOffToHundreths(distance3)&&roundOffToHundreths(distance2) ===roundOffToHundreths(distance4)) {
-        //         const area = distance1 * distance2
-        //         document.getElementById("demo").innerHTML = `${area} metre square`
-        //     } else {
-        //         document.getElementById("demo").innerHTML = `NOT A RECTANGLE`
-        //     }
-        const area = distance1 * distance2
-        document.getElementById("demo").innerHTML = `${area} metre square`
+          const area = distance1 * distance2
+          const displayArea  = document.getElementById("demo")
+          
+          const getUnit = document.getElementById("convert").value
+                if (getUnit==="metreSquare") {
+                    displayArea.innerHTML = `${area} metre square`
+                }else if (getUnit ==="acres") {
+                    acre = area * 0.000242;
+                    displayArea.innerHTML = acre
+                }else if (getUnit === "hectares") {
+                    hectares = area * 0.0001;
+                    displayArea.innerHTML = hectares
+                }else if (getUnit === "squareKilometres") {
+                    squareKilometres = area * 0.000001
+                    displayArea.innerHTML = squareKilometres
+                }else {ares = area * 0.01
+                    displayArea.innerHTML = ares}
+                
         }
         getData()
     })
