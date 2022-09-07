@@ -71,16 +71,16 @@ function start(event){
                     document.getElementById("metres").innerHTML = `${area} metre square`
                        //in acres
                     acre = area * 0.000242;
-                    document.getElementById("acres").innerHTML = acre;
+                    document.getElementById("acres").innerHTML =`${acre} acres`;
                          //in hectares
                     hectares = area * 0.0001;
-                    document.getElementById("hectares").innerHTML = hectares;
+                    document.getElementById("hectares").innerHTML = `${hectares} hectares`;
                         //in square kilometres 
                     squareKilometres = area * 0.000001
-                    document.getElementById("kilometres").innerHTML = squareKilometres
+                    document.getElementById("kilometres").innerHTML = `${squareKilometres} square Kilometre`
 
                     ares = area * 0.01
-                    document.getElementById("ares").innerHTML = ares;
+                    document.getElementById("ares").innerHTML = `${ares} ares`;
                 
         }
         getData()

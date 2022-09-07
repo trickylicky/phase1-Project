@@ -76,15 +76,7 @@
         <label for="latitude">LATITUDE : </label>
         <input type="number" name="latitude" id="latitudeD" value="5.07">
       </div>
-      <input type="submit" id="addA" style="margin: 20px;" value="distanceA">
-
-      <select name="conversion" id="convert">
-        <option value="metreSquare">metre square</option>
-        <option value="acres">acres</option>
-        <option value="hectares">hectares</option>
-        <option value="squarKilometres">square kilometres</option>
-        <option value="ares">ares</option>
-      </select>
+      <input type="submit" id="addA" style="margin: 20px;"">
     </form>
         <!-- OUTPUT SHOWN HERE -->
     <div class="container card">
@@ -104,38 +96,23 @@
           <td id="perimeter">kilometres</td>
           
         </tr>
-        <tr>
-          <th>acres</th>
-          <th>ares</th>
-          <th>hectares</th>
-          <th>square Kilometres</th>
-          <th>square metres</th>
-        </tr>
-        <tr>
-          <td id="acres"></td>
-          <td id="ares"></td>
-          <td id="hectares"></td>
-          <td id="metres"></td>
-          <td id="kilometres"></td>
-        </tr>
+        <table>
+          <tr>
+            <th>acres</th>
+            <th>ares</th>
+            <th>hectares</th>
+            <th>square Kilometres</th>
+            <th class="twinkle">square metres</th>
+          </tr>
+          <tr>
+            <td id="acres">in acres</td>
+            <td id="ares">in ares</td>
+            <td id="hectares">in hectares</td>
+            <td id="kilometres">in kilometres</td>
+            <td id="metres">in metres</td>
+          </tr>
+        </table>
       </table>
-
-                      <!-- area conversion -->
-      <div class="card cards">
-      <h6 class="twinkle" >AREA CONVERSION</h6>
-      <label for="conversion">Choose to convert:</label>
-      <select name="conversion" id="convert">
-        <option value="metreSquare">metre square</option>
-        <option value="acres">acres</option>
-        <option value="hectares">hectares</option>
-        <option value="square Kilometres">square kilometres</option>
-        <option value="ares">ares</option>
-      </select>
-      <div>
-        <div class="twinkle" id="demo" >AREA</div>
-      </div>
-    </div>
-    </div>
     
    <div class="card learn">
     <p> <h4>What is Latitude and Longitude?</h4>
