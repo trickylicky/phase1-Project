@@ -67,22 +67,20 @@ function start(event){
 
           //getting area of the area 
           const area = distance1 * distance2
-          const displayArea  = document.getElementById("demo")
-          
-          const getUnit = document.getElementById("convert").value
-                if (getUnit==="metreSquare") {
-                    displayArea.innerHTML = `${area} metre square`
-                }else if (getUnit ==="acres") {
+                        //in square metres 
+                    document.getElementById("metres").innerHTML = `${area} metre square`
+                       //in acres
                     acre = area * 0.000242;
-                    displayArea.innerHTML = acre
-                }else if (getUnit === "hectares") {
+                    document.getElementById("acres").innerHTML = acre;
+                         //in hectares
                     hectares = area * 0.0001;
-                    displayArea.innerHTML = hectares
-                }else if (getUnit === "squareKilometres") {
+                    document.getElementById("hectares").innerHTML = hectares;
+                        //in square kilometres 
                     squareKilometres = area * 0.000001
-                    displayArea.innerHTML = squareKilometres
-                }else {ares = area * 0.01
-                    displayArea.innerHTML = ares}
+                    document.getElementById("kilometres").innerHTML = squareKilometres
+
+                    ares = area * 0.01
+                    document.getElementById("ares").innerHTML = ares;
                 
         }
         getData()
