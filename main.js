@@ -45,7 +45,11 @@ function start(event){
             const distance4 = await data4.distance
 
           //FIND PERIMETER
-          const addTotal = (distance1 + distance2 + distance3 + distance4)/1000
+          const addTotal = distance1 + distance2 + distance3 + distance4
+
+          //change into kilometres
+
+          const toKilometre =(distance)=> distance/1000;
 
           document.getElementById("tableDisplay").innerHTML = `
           <tr>
@@ -55,46 +59,13 @@ function start(event){
           <th>"d" in Kilometres</th>
           <th class="twinkle">PERIMETER IN KILOMETRES</th>
         </tr>
-          <td id="firstSide">${distance1}kilometre</td>
-          <td id="secondSide">${distance2}kilometre</td>
-          <td id="thirdSide">${distance3}kilometre</td>
-          <td id="forthSide">${distance4}kilometre</td>
-          <td id="perimeter">${addTotal} kilometres</td>`
+          <td id="firstSide">${toKilometre(distance1)}kilometre</td>
+          <td id="secondSide">${toKilometre(distance2)}kilometre</td>
+          <td id="thirdSide">${toKilometre(distance3)}kilometre</td>
+          <td id="forthSide">${toKilometre(distance4)}kilometre</td>
+          <td id="perimeter">${toKilometre(addTotal)} kilometres</td>`
 
         }
         getData()
     })
 }
-
-
-
-        //     .then(response => response.json())
-        //     .then(response => {return distance1 = response.distance})
-        //     .then(response => {document.getElementById("firstSide").innerHTML = `${distance1} metres`})
-        //     .catch(err => console.error(err));
-        
-
-        // //GETTING THE SECOND SIDE
-        //     
-        //     .then(response => response.json())
-        //     .then(response => {return distance2 = response.distance})
-        //     .then(response => {document.getElementById("secondSide").innerHTML = `${distance2} metres`})
-        //     .catch(err => console.error(err));
-
-
-        // //GETTING THE THIRD SIDE
-        //     
-        //     .then(response => response.json())
-        //     .then(response => {return distance3 = response.distance})
-        //     .then(response => {document.getElementById("thirdSide").innerHTML = `${distance3} metres`})
-        //     .catch(err => console.error(err));
-
-
-        // //GETTING THE FORTH SIDE
-        //     
-        //     .then(response => response.json())
-        //     .then(response => {return distance4 = response.distance})
-        //     .then(response => {document.getElementById("forthSide").innerHTML = `${distance4} metres`})
-        //     .catch(err => console.error(err));
-
-
