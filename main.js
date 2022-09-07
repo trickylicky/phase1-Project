@@ -48,7 +48,18 @@ function start(event){
           const addTotal = (distance1 + distance2 + distance3 + distance4)/1000
 
           document.getElementById("tableDisplay").innerHTML = `
-        
+          <tr>
+          <th>"a" in Kilometres</th>
+          <th>"b" in Kilometres</th>
+          <th>"c" in Kilometres</th>
+          <th>"d" in Kilometres</th>
+          <th class="twinkle">PERIMETER IN KILOMETRES</th>
+        </tr>
+          <td id="firstSide">${distance1}kilometre</td>
+          <td id="secondSide">${distance2}kilometre</td>
+          <td id="thirdSide">${distance3}kilometre</td>
+          <td id="forthSide">${distance4}kilometre</td>
+          <td id="perimeter">${addTotal} kilometres</td>`
 
         }
         getData()
