@@ -49,38 +49,38 @@
         <div id="first-point">
           <h6>start POINT</h6>
         <label for="longitude">LONGITUDE : </label>
-        <input type="text" name="longitude" id="longitudeA">
+        <input type="number" name="longitude" id="longitudeA" value="80.2048">
         <label for="latitude">LATITUDE : </label>
-        <input type="text" name="latitudeA" id="latitudeA">
+        <input type="number" name="latitudeA" id="latitudeA" value="13.07">
       </div>
       <div id="second-point">
           <h6>2nd POINT</h6>
         <label for="longitude">LONGITUDE : </label>
-        <input type="text" name="longitude" id="longitudeB">
+        <input type="number" name="longitude" id="longitudeB" value="78.2048">
         <label for="latitude">LATITUDE : </label>
-        <input type="text" name="latitude" id="latitudeB">
-        <input type="submit" id="addA" style="margin: 20px;" value="distanceA">
+        <input type="number" name="latitude" id="latitudeB" value="12.07">
       </div>
+
       <div id="third-point">
           <h6>3rd POINT</h6>
         <label for="longitude">LONGITUDE : </label>
-        <input type="text" name="longitude" id="longitudeC">
+        <input type="number" name="longitude" id="longitudeC" value="78.2048">
         <label for="latitude">LATITUDE : </label>
-        <input type="text" name="latitude" id="latitudeC">
-        <input type="submit" id="addC" style="margin: 20px;">
+        <input type="number" name="latitude" id="latitudeC" value="6.07">
       </div>
+
       <div id="forth-point">
           <h6>4st POINT</h6>
         <label for="longitude">LONGITUDE : </label>
-        <input type="text" name="longitude" id="longitudeD">
+        <input type="number" name="longitude" id="longitudeD" value="78.2048">
         <label for="latitude">LATITUDE : </label>
-        <input type="text" name="latitude" id="latitudeD">
-        <input type="submit" id="addD" style="margin: 20px;">
+        <input type="number" name="latitude" id="latitudeD" value="5.07">
       </div>
+      <input type="submit" id="addA" style="margin: 20px;" value="distanceA">
     </form>
         <!-- OUTPUT SHOWN HERE -->
     <div class="container card">
-      <table>
+      <table id ="tableDisplay">
         <tr>
           <th>"a" in metres</th>
           <th>"b" in metres</th>
@@ -89,12 +89,13 @@
           <th class="twinkle">AREA IN SQUARE METRES</th>
         </tr>
         <tr>
-          <td>12metres</td>
-          <td>12metres</td>
-          <td>12metres</td>
-          <td>12metres</td>
+          <td id="firstSide">firstSide Distance</td>
+          <td id="secondSide">secondSide Distance</td>
+          <td id="thirdSide">thirdSide Distance</td>
+          <td id="forthSide">forthSide Distance</td>
           <td>metre SQUARE</td>
-          <td><button>delete</button></td>
+          
+        </tr>
       </table>
       <div class="card cards">
       <h6 class="twinkle" >AREA CONVERSION</h6>

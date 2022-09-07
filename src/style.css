@@ -16,6 +16,9 @@ form{
   border-radius: 15pc;
   border-style: double;
 }
+form h6{
+  font-size: 23px;
+}
 #map{
   border: radius 5px;
 }

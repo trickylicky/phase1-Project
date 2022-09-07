@@ -1,48 +1,63 @@
-const firstPoint =	[document.getElementById("longitudeA"),document.getElementById("latitudeA")]
-const secondPoint =	[document.getElementById("longitudeB"),document.getElementById("latitudeB")]
-const thirdPoint =	[document.getElementById("longitudeC"),document.getElementById("latitudeA")]
-const forthPoint =	[document.getElementById("longitudeD"),document.getElementById("latitudeA")]
-
-
-
-
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '9aa649390bmsh438d62d7b07cf67p1ebf76jsn1cae3bd5b0a7',
-		'X-RapidAPI-Host': 'global-zip-codes-with-lat-and-lng.p.rapidapi.com'
-	}
-};
-	fetch(`https://global-zip-codes-with-lat-and-lng.p.rapidapi.com/api/v1/geocode/distance?lat1=${firstPoint[1].value}&lng1=${firstPoint[0].value}&lat2=${secondPoint[1].value}&lng2=${secondPoint[0].value}`, options)
-			.then(response => response.json())
-			.then(response => {const distance1 = response.distance})
-			.then(response=>console.log(response))
-			.catch(err => console.error(err));
-	fetch(`https://global-zip-codes-with-lat-and-lng.p.rapidapi.com/api/v1/geocode/distance?lat1=${secondPoint[1].value}&lng1=${secondPoint[0].value}&lat2=${thirdPoint[1].value}&lng2=${thirdPoint[0].value}`, options)
-			.then(response => response.json())
-			.then(response => {const distance2 = response.distance})
-			.then(response=>console.log(response))
-			.catch(err => console.error(err));
-	fetch(`https://global-zip-codes-with-lat-and-lng.p.rapidapi.com/api/v1/geocode/distance?lat1=${thirdPoint[1].value}&lng1=${thirdPoint[0].value}&lat2=${forthPoint[1].value}&lng2=${forthPoint[0].value}`, options)
-			.then(response => response.json())
-			.then(response => {const distance3 = response.distance})
-			.then(response=>console.log(response))
-			.catch(err => console.error(err));
-	fetch(`https://global-zip-codes-with-lat-and-lng.p.rapidapi.com/api/v1/geocode/distance?lat1=${forthPoint[1].value}&lng1=${forthPoint[0].value}&lat2=${firstPoint[1].value}&lng2=${firstPoint[0].value}`, options)
-			.then(response => response.json())
-			.then(response => {const distance4 = response.distance})
-			.then(response=>console.log(response))
-			.catch(err => console.error(err));
-
 document.addEventListener("DOMContentLoaded",start)
-
+	
 function start(event){
-	event.preventDefault();
+    event.preventDefault();
 
-	document.getElementById("addA").addEventListener("click",()=>{
-		//get first long and lat and second long and lat
-		//get second long and lat and third long and lat
-		//get third long and lat and forth long and lat
-		//get forth long and lat and first long and lat
-	})
+    const firstPointA =	document.getElementById("longitudeA")
+    const firstPointB = document.getElementById("latitudeA")
+
+    const secondPointA = document.getElementById("longitudeB")
+    const secondPointB = document.getElementById("latitudeB")
+
+    const thirdPointA = document.getElementById("longitudeC");
+    const thirdPointB = document.getElementById("latitudeC")
+
+    const forthPointA = document.getElementById("longitudeD")
+    const forthPointB = document.getElementById("latitudeD")
+
+    document.getElementById("addA").addEventListener("click",()=>{
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '9aa649390bmsh438d62d7b07cf67p1ebf76jsn1cae3bd5b0a7',
+                'X-RapidAPI-Host': 'global-zip-codes-with-lat-and-lng.p.rapidapi.com'
+            }
+        };
+        //GETTING THE FIRST SIDE
+        fetch(`https://global-zip-codes-with-lat-and-lng.p.rapidapi.com/api/v1/geocode/distance?lat1=${firstPointB.value}&lng1=${firstPointA.value}&lat2=${secondPointB.value}&lng2=${secondPointA.value}`, options)
+            .then(response => response.json())
+            .then(response => {return distance1 = response.distance})
+            .then(response => {document.getElementById("firstSide").innerHTML = `${distance1} metres`})
+            .catch(err => console.error(err));
+        
+
+        //GETTING THE SECOND SIDE
+            fetch(`https://global-zip-codes-with-lat-and-lng.p.rapidapi.com/api/v1/geocode/distance?lat1=${firstPointB.value}&lng1=${firstPointA.value}&lat2=${thirdPointB.value}&lng2=${thirdPointA.value}`, options)
+            .then(response => response.json())
+            .then(response => {return distance2 = response.distance})
+            .then(response => {document.getElementById("secondSide").innerHTML = `${distance2} metres`})
+            .catch(err => console.error(err));
+
+
+        //GETTING THE THIRD SIDE
+            fetch(`https://global-zip-codes-with-lat-and-lng.p.rapidapi.com/api/v1/geocode/distance?lat1=${thirdPointB.value}&lng1=${thirdPointA.value}&lat2=${forthPointB.value}&lng2=${forthPointA.value}`, options)
+            .then(response => response.json())
+            .then(response => {return distance3 = response.distance})
+            .then(response => {document.getElementById("thirdSide").innerHTML = `${distance3} metres`})
+            .catch(err => console.error(err));
+
+
+        //GETTING THE FORTH SIDE
+            fetch(`https://global-zip-codes-with-lat-and-lng.p.rapidapi.com/api/v1/geocode/distance?lat1=${forthPointB.value}&lng1=${forthPointA.value}&lat2=${secondPointB.value}&lng2=${secondPointA.value}`, options)
+            .then(response => response.json())
+            .then(response => {return distance4 = response.distance})
+            .then(response => {document.getElementById("forthSide").innerHTML = `${distance4} metres`})
+            .catch(err => console.error(err));
+
+            console.log(document.getElementById("firstSide").innerHTML);
+    })
 }
+
+
+
+
