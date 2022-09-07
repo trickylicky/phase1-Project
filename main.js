@@ -49,7 +49,7 @@ function start(event){
 
           //change into kilometres
 
-          const toKilometre =(distance)=> distance/1000;
+          const toKilometre =(distance)=> Math.abs(distance/1000);
 
           document.getElementById("tableDisplay").innerHTML = `
           <tr>
@@ -65,6 +65,14 @@ function start(event){
           <td id="forthSide">${toKilometre(distance4)}kilometre</td>
           <td id="perimeter">${toKilometre(addTotal)} kilometres</td>`
 
+          //getting area of the area 
+          const roundOffToHundreths =(distance)=> Math.ceil(distance / 100) * 100
+            if (roundOffToHundreths(distance1) ===roundOffToHundreths(distance3)&&roundOffToHundreths(distance2) ===roundOffToHundreths(distance4)) {
+                const area = distance1 * distance2
+                document.getElementById("demo").innerHTML = `${area} metre square`
+            } else {
+                document.getElementById("demo").innerHTML = `NOT A RECTANGLE`
+            }
         }
         getData()
     })
