@@ -36,10 +36,12 @@ function start(event){
             const data2 = await responce2.json()
             const distance2 = await data2.distance
 
+                        //GETTING THE THIRD SIDE IN METRES
             const responce3 = await fetch(`https://global-zip-codes-with-lat-and-lng.p.rapidapi.com/api/v1/geocode/distance?lat1=${thirdPointB.value}&lng1=${thirdPointA.value}&lat2=${forthPointB.value}&lng2=${forthPointA.value}`, options)
             const data3 = await responce3.json()
             const distance3 = await data3.distance
 
+                        //GETTING THE FORTH SIDE IN METRES
             const responce4 = await fetch(`https://global-zip-codes-with-lat-and-lng.p.rapidapi.com/api/v1/geocode/distance?lat1=${forthPointB.value}&lng1=${forthPointA.value}&lat2=${secondPointB.value}&lng2=${secondPointA.value}`, options)
             const data4 = await responce4.json()
             const distance4 = await data4.distance
@@ -48,7 +50,6 @@ function start(event){
           const addTotal = distance1 + distance2 + distance3 + distance4
 
           //change into kilometres
-
           const toKilometre =(distance)=> Math.abs(distance/1000);
 
           document.getElementById("tableDisplay").innerHTML = `
@@ -67,6 +68,7 @@ function start(event){
 
           //getting area of the area 
           const area = distance1 * distance2
+
                         //in square metres 
                     document.getElementById("metres").innerHTML = `${area} metre square`
                        //in acres
@@ -78,7 +80,7 @@ function start(event){
                         //in square kilometres 
                     squareKilometres = area * 0.000001
                     document.getElementById("kilometres").innerHTML = `${squareKilometres} square Kilometre`
-
+                        //in ares
                     ares = area * 0.01
                     document.getElementById("ares").innerHTML = `${ares} ares`;
                 
