@@ -1,5 +1,14 @@
                     MapAreaCalculator
+Author's Name
+Victor Muhita
+
+Description
 This is the sample code to calculate area of the selected polygon in leaflet map.Input the longitudes and latitudes of the land you wish to calculate its area and get area in meter square.You can also convert the area to other units including kilometre Square,hectares, acre and ares
+
+Technology Used
+HTML - used to build the structure of the pages.
+CSS - used to style the pages.
+JS - used to enable the page to function appropriately.
 
         #licence
 The MIT License (MIT)
